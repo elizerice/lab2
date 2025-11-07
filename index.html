@@ -81,28 +81,20 @@
 
 				// scene objects
 				
+				var geometry = new THREE.BoxGeometry ( 100, 100, 100 );
+				var material = new THREE.MeshPhongMaterial( { color: 0xc41e3a } );	
+						
+				var materials = [ ];
 				var textureLoader = new THREE.TextureLoader();
-				var texture = textureLoader.load( 'textures/kote.jpg' );
-				//texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-				//texture.anisotropy = 16;
-				var material = new THREE.MeshBasicMaterial( { map: texture } );
-
-				var geometry = new THREE.BoxGeometry ( 200, 200, 200 );		
-				var Cube = new THREE.Mesh( geometry, material );
-				Cube.position.y = 100;
+				for ( let i = 1; i <= 6; i++ ) {
+					var texture = textureLoader.load( 'textures/' + String(i) + '.png' );
+					var material = new THREE.MeshPhongMaterial( { map: texture, color: 0x00dcff } );
+					materials.push( material );
+				}
+        
+				var Cube = new THREE.Mesh( geometry, materials );
+				Cube.rotation.y = Math.PI / 6;
 				scene.add( Cube );
-
-				var texture = textureLoader.load( 'textures/checkerboard.jpg' );
-				texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-				texture.anisotropy = 16;
-				texture.repeat.set( 4, 4 );
-				var material = new THREE.MeshBasicMaterial( { map: texture, side: THREE.DoubleSide } );
-
-				var geometry = new THREE.PlaneGeometry( 800, 800, 1, 1 );	
-				var Plane = new THREE.Mesh( geometry, material );
-				Plane.position.y = - 1;
-				Plane.rotation.x =  Math.PI / 2;
-				scene.add( Plane );
 							
 
 			}
