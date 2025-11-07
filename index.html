@@ -80,16 +80,9 @@
 			
 
 				// scene objects
-
-				var textureLoader = new THREE.TextureLoader();
-				for ( let i = 1; i <= 6; i++ ) {
-					var texture = textureLoader.load( 'textures/' + String(i) + '.png' );
-					var material = new THREE.MeshPhongMaterial( { map: texture, color: 0x00dcff } );
-					materials.push( material );
-				}
-
-
 				
+				var textureLoader = new THREE.TextureLoader();
+				var texture = textureLoader.load( 'textures/kote.jpg' );
 				//texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
 				//texture.anisotropy = 16;
 				var material = new THREE.MeshBasicMaterial( { map: texture } );
@@ -154,3 +147,5 @@
 
 	</body>
 </html>
+
+
