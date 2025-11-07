@@ -96,11 +96,11 @@
 				Cube.rotation.y = Math.PI / 6;
 				scene.add( Cube );
 
-				var geometry = new THREE.PlaneGeometry( 800, 800, 1, 1 );
+				var geometry = new THREE.PlaneGeometry( 800, 800 );
 				var texture = textureLoader.load( 'textures/plane.jpg' );
-				var material = new THREE.MeshPhongMaterial( { map: texture, color: 0xFFFFFF } );
+				var material = new THREE.MeshPhongMaterial( { map: texture, color: 0xFFFFFF, side: THREE.DoubleSide } );
 				var Plane = new THREE.Mesh( geometry, material );
-				Plane.position.y = - 1;
+				Plane.position.y = - 50;
 				Plane.rotation.x =  Math.PI / 2;
 				scene.add( Plane );
 							
