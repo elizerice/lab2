@@ -88,7 +88,7 @@
 				var textureLoader = new THREE.TextureLoader();
 				for ( let i = 1; i <= 6; i++ ) {
 					var texture = textureLoader.load( 'textures/' + String(i) + '.jpg' );
-					var material = new THREE.MeshPhongMaterial( { map: texture, color: 0x000000 } );
+					var material = new THREE.MeshPhongMaterial( { map: texture, color: 0xFFFFFFF } );
 					materials.push( material );
 				}
         
