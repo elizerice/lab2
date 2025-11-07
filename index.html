@@ -88,13 +88,21 @@
 				var textureLoader = new THREE.TextureLoader();
 				for ( let i = 1; i <= 6; i++ ) {
 					var texture = textureLoader.load( 'textures/' + String(i) + '.jpg' );
-					var material = new THREE.MeshPhongMaterial( { map: texture, color: 0x00dcff } );
+					var material = new THREE.MeshPhongMaterial( { map: texture, color: 0x000000 } );
 					materials.push( material );
 				}
         
 				var Cube = new THREE.Mesh( geometry, materials );
 				Cube.rotation.y = Math.PI / 6;
 				scene.add( Cube );
+
+				var geometry = new THREE.PlaneGeometry( 800, 800, 1, 1 );
+				var texture = textureLoader.load( 'textures/plane.jpg' );
+				var material = new THREE.MeshPhongMaterial( { map: texture, color: 0x000000 } );
+				var Plane = new THREE.Mesh( geometry, material );
+				Plane.position.y = - 1;
+				Plane.rotation.x =  Math.PI / 2;
+				scene.add( Plane );
 							
 
 			}
